@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { PlatformContext } from '../../context/PlatformContext';
 
 // ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
@@ -167,18 +167,24 @@ const MultiLine = ({ data, keys, colors, height=140 }) => {
 // ─── DONUT CHART ──────────────────────────────────────────────────────────────
 const DonutChart = ({ data, size=120 }) => {
   const total = data.reduce((s, d) => s + d.value, 0);
-  let angle = -90;
   const r = 40, cx = size/2, cy = size/2;
-  const slices = data.map(d => {
+  const slices = [];
+  let currentAngle = -90;
+  for (let i = 0; i < data.length; i++) {
+    const d = data[i];
     const pct = d.value / (total || 1);
-    const startAngle = angle;
-    angle += pct * 360;
-    const endAngle = angle;
+    const startAngle = currentAngle;
+    const endAngle = currentAngle + (pct * 360);
+    currentAngle = endAngle;
     const start = polarToXY(cx, cy, r, startAngle);
     const end = polarToXY(cx, cy, r, endAngle);
     const large = pct > 0.5 ? 1 : 0;
-    return { ...d, path: `M ${cx} ${cy} L ${start.x} ${start.y} A ${r} ${r} 0 ${large} 1 ${end.x} ${end.y} Z`, pct: Math.round(pct * 100) };
-  });
+    slices.push({
+      ...d,
+      path: `M ${cx} ${cy} L ${start.x} ${start.y} A ${r} ${r} 0 ${large} 1 ${end.x} ${end.y} Z`,
+      pct: Math.round(pct * 100)
+    });
+  }
   return (
     <svg width={size} height={size}>
       {slices.map((s, i) => <path key={i} d={s.path} fill={s.color} />)}
@@ -840,7 +846,7 @@ const TrainingDashboard = () => {
 };
 
 // ── DATA EXPORT ───────────────────────────────────────────────────────────────
-const DataExport = ({ role }) => {
+const DataExport = () => {
   const [exporting, setExporting] = useState(null);
   const handleExport = (id) => { setExporting(id); setTimeout(() => setExporting(null), 2000); };
   return (

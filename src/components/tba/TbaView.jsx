@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { PlatformContext } from '../../context/PlatformContext';
 
 // ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
@@ -73,6 +73,12 @@ const RiskBadge = ({ risk, small }) => {
     </span>
   );
 };
+
+const Badge = ({ text, color, bg }) => (
+  <span style={{ background: bg, color, borderRadius: 12, padding: "4px 10px", fontSize: 10, fontWeight: 700, fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap" }}>
+    {text}
+  </span>
+);
 
 const Btn = ({ children, onClick, variant="primary", fullWidth, small, icon, disabled }) => {
   const styles = {
@@ -215,7 +221,6 @@ export default function TbaView() {
   const [ancFhr, setAncFhr] = useState("140");
   const [ancOedema, setAncOedema] = useState("None");
   const [ancUrine, setAncUrine] = useState("Negative");
-  const [ancTreatments, setAncTreatments] = useState([]);
   const [ancNotes, setAncNotes] = useState("");
 
   const [dangerSymptoms, setDangerSymptoms] = useState([]);

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { PlatformContext } from '../../context/PlatformContext';
 
 // ─── DESIGN TOKENS ─────────────────────────────────────────────────────────
@@ -99,6 +99,16 @@ const Pad = ({ children, style }) => (
 const Card = ({ children, style, onClick }) => (
   <div onClick={onClick} style={{ background: C.white, borderRadius: 20, padding: 16, boxShadow: "0 2px 16px rgba(58,35,20,0.05)", cursor: onClick ? "pointer" : "default", ...style }}>
     {children}
+  </div>
+);
+
+const Input = ({ label, value, onChange, placeholder, type="text", suffix }) => (
+  <div style={{ marginBottom: 14 }}>
+    {label && <div style={{ fontSize: 9, fontWeight: 700, color: C.grey400, textTransform: "uppercase", letterSpacing: 1.2, marginBottom: 8, marginTop: 14, fontFamily: "'DM Sans', sans-serif" }}>{label}</div>}
+    <div style={{ position: "relative" }}>
+      <input type={type} value={value} onChange={onChange} placeholder={placeholder} style={{ width: "100%", background: C.white, border: `1.5px solid ${C.grey200}`, borderRadius: 12, padding: "12px 14px", fontSize: 14, fontFamily: "'DM Sans', sans-serif", color: C.grey800, outline: "none" }} />
+      {suffix && <span style={{ position: "absolute", right: 14, top: "50%", transform: "translateY(-50%)", fontSize: 12, color: C.grey400 }}>{suffix}</span>}
+    </div>
   </div>
 );
 

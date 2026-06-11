@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PlatformProvider } from './context/PlatformContext';
 import DashboardView from './components/dashboard/DashboardView';
 import TbaView from './components/tba/TbaView';

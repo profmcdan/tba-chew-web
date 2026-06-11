@@ -221,7 +221,7 @@ export default function PatientView() {
   // Helper date parsing to get EGA weeks
   const calculateEgaWeeks = (lmpStr) => {
     const lmpDate = new Date(lmpStr || "10 Jan 2026");
-    const diff = new Date("2026-06-11T00:00:00") - lmpDate; // lock session date
+    const diff = new Date(2026, 5, 11) - lmpDate; // lock session date (June 11, 2026)
     const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
     return Math.max(Math.floor(diffDays / 7), 1);
   };

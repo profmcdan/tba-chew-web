@@ -35,7 +35,7 @@ function PlatformHub() {
             ❤️
           </div>
           <div>
-            <h1 style={{ fontSize: 16, fontWeight: 800, letterSpacing: 0.5 }}>KAIROI INTEL</h1>
+            <h1 style={{ fontSize: 16, fontWeight: 800, letterSpacing: 0.5 }}>AHF</h1>
             <p style={{ fontSize: 10, color: 'rgba(255, 255, 255, 0.6)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>Maternal Health Platform Hub</p>
           </div>
         </div>

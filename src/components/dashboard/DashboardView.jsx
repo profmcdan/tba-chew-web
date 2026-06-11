@@ -227,7 +227,7 @@ const Sidebar = ({ active, onNav, role }) => (
           <Icon name="heart" size={18} color={T.white} />
         </div>
         <div>
-          <div style={{ fontSize: 13, fontWeight: 800, color: T.white }}>Kairoi Intel</div>
+          <div style={{ fontSize: 13, fontWeight: 800, color: T.white }}>AHF</div>
           <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase" }}>AHF Platform</div>
         </div>
       </div>
@@ -928,7 +928,7 @@ export default function DashboardView() {
           {renderContent()}
         </div>
         <div style={{ padding: "12px 28px", background: T.white, borderTop: `1px solid ${T.grey100}`, display: "flex", justifyContent: "space-between", fontSize: 11, color: T.grey400 }}>
-          <span>Access Heart Foundation · Kairoi Intel · Programme Manager & Ministry Dashboard · v2.0 · June 2026</span>
+          <span>Access Heart Foundation · AHF · Programme Manager & Ministry Dashboard · v2.0 · June 2026</span>
           <span>CONFIDENTIAL — Internal use only</span>
         </div>
       </div>

@@ -261,7 +261,7 @@ export default function TbaView() {
               <Icon name="heart" size={32} color={T.lime} />
             </div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", fontWeight: 500, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 4 }}>Access Heart Foundation</div>
-            <div style={{ fontSize: 24, fontWeight: 800, color: T.white, lineHeight: 1.2 }}>Kairoi Intel<br/>TBA Assistant</div>
+            <div style={{ fontSize: 24, fontWeight: 800, color: T.white, lineHeight: 1.2 }}>AHF<br/>TBA Assistant</div>
           </div>
           
           <div style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(10px)", borderRadius: 20, padding: 20 }}>

@@ -591,10 +591,10 @@ const MaternalHealth = () => {
         <Card>
           <CardHeader title="High-Risk Clients" icon="alert" iconColor={T.orange} />
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {HIGH_RISK_CLIENTS.map(([l,v,c]) => (
-              <div key={l} style={{ display: "flex", justifyContent: "space-between" }}>
-                <span style={{ fontSize: 12, color: T.grey600 }}>{l}</span>
-                <span style={{ fontSize: 13, fontWeight: 700, color: c }}>{v}</span>
+            {HIGH_RISK_CLIENTS.map(({ label, value, color }) => (
+              <div key={label} style={{ display: "flex", justifyContent: "space-between" }}>
+                <span style={{ fontSize: 12, color: T.grey600 }}>{label}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: color }}>{value}</span>
               </div>
             ))}
           </div>
